@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6nRXO55cTsBKFEh3LkbORrjfGPdiPszMDjPQG0/6l0NJFeF0bI+PKyTSQQ+3vDEh7vMqNCgryL7NxniFt2lgbw==",
+  "dgSpecHash": "G4S/NRfq7ALMjWEy3ofZcLAfxh3BogYNF0S8DKUz/YlbQInH4cOg4lbPw0PxSgEg15L8B0LyK5GeThtcTv5ClQ==",
   "success": true,
-  "projectFilePath": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.iOS\\Xam.Views.Loader.iOS.csproj",
+  "projectFilePath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.iOS\\Xam.Views.Loader.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PraweshRajKhapangi\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\PraweshRajKhapangi\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",

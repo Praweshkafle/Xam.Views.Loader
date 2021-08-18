@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vjs9YhkyR/C//gfIzMOMK8WJVIj+C8Re8PhgByStR9MmmMsC8ymvd4tFdpl18hYZhq644/zNunLMRI1b3eN5Fw==",
+  "dgSpecHash": "uJb8bLxsN7YquvSFDQL4J1fP4T4aKsLtq5UBe7srF26uEqxCZihX/u2/dMxRhcMPgqEMrE/ygbe4EgmUWTrWdw==",
   "success": true,
-  "projectFilePath": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj",
+  "projectFilePath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PraweshRajKhapangi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\PraweshRajKhapangi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

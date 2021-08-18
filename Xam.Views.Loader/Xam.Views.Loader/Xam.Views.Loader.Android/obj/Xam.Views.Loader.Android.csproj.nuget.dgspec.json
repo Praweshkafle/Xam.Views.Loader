@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\Xam.Views.Loader.Android.csproj": {}
+    "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\Xam.Views.Loader.Android.csproj": {}
   },
   "projects": {
-    "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\Xam.Views.Loader.Android.csproj": {
+    "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\Xam.Views.Loader.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\Xam.Views.Loader.Android.csproj",
+        "projectUniqueName": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\Xam.Views.Loader.Android.csproj",
         "projectName": "Xam.Views.Loader.Android",
-        "projectPath": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\Xam.Views.Loader.Android.csproj",
+        "projectPath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\Xam.Views.Loader.Android.csproj",
         "packagesPath": "C:\\Users\\PraweshRajKhapangi\\.nuget\\packages\\",
-        "outputPath": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\obj\\",
+        "outputPath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid11.0": {
             "projectReferences": {
-              "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj": {
-                "projectPath": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj"
+              "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj": {
+                "projectPath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj"
               }
             }
           }
@@ -54,14 +54,14 @@
         }
       }
     },
-    "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj": {
+    "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj",
+        "projectUniqueName": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj",
         "projectName": "Xam.Views.Loader",
-        "projectPath": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj",
+        "projectPath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj",
         "packagesPath": "C:\\Users\\PraweshRajKhapangi\\.nuget\\packages\\",
-        "outputPath": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\obj\\",
+        "outputPath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

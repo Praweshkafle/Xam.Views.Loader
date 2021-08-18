@@ -997,11 +997,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.iOS\\Xam.Views.Loader.iOS.csproj",
+      "projectUniqueName": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.iOS\\Xam.Views.Loader.iOS.csproj",
       "projectName": "Xam.Views.Loader.iOS",
-      "projectPath": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.iOS\\Xam.Views.Loader.iOS.csproj",
+      "projectPath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.iOS\\Xam.Views.Loader.iOS.csproj",
       "packagesPath": "C:\\Users\\PraweshRajKhapangi\\.nuget\\packages\\",
-      "outputPath": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.iOS\\obj\\",
+      "outputPath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1022,8 +1022,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj": {
-              "projectPath": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj"
+            "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj": {
+              "projectPath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.csproj"
             }
           }
         }

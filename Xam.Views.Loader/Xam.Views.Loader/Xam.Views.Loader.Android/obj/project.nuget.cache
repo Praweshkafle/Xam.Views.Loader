@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/m0FcUrQhjjVpeUAdk4XH2CnAo+8QD/gzssWUIqh/8EQTqyZ6HfMzR7lAAGcymNo8IxZAF5oSFg5ClQll9belw==",
+  "dgSpecHash": "jraz6m3oelMt48eNNR3M9tTzqe+Nfeb/WQatupC6ea9glu5pnqm7zB4Gmo0ubzZVk99yfl+K5IAVEUG6EMMCng==",
   "success": true,
-  "projectFilePath": "E:\\all projects\\xamarin proj\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\Xam.Views.Loader.Android.csproj",
+  "projectFilePath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Android\\Xam.Views.Loader.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PraweshRajKhapangi\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\PraweshRajKhapangi\\.nuget\\packages\\xamarin.androidx.activity\\1.1.0.5\\xamarin.androidx.activity.1.1.0.5.nupkg.sha512",

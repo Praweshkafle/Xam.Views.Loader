@@ -975,6 +975,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Xam.Views.Loader.Portable": "1.0.0",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012"
         },
@@ -983,6 +984,19 @@
         },
         "runtime": {
           "bin/placeholder/Xam.Views.Loader.dll": {}
+        }
+      },
+      "Xam.Views.Loader.Portable/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "bin/placeholder/Xam.Views.Loader.Portable.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Xam.Views.Loader.Portable.dll": {}
         }
       }
     }
@@ -2132,6 +2146,11 @@
       "type": "project",
       "path": "../Xam.Views.Loader/Xam.Views.Loader.csproj",
       "msbuildProject": "../Xam.Views.Loader/Xam.Views.Loader.csproj"
+    },
+    "Xam.Views.Loader.Portable/1.0.0": {
+      "type": "project",
+      "path": "../../Xam.Views.Loader.Portable/Xam.Views.Loader.Portable.csproj",
+      "msbuildProject": "../../Xam.Views.Loader.Portable/Xam.Views.Loader.Portable.csproj"
     }
   },
   "projectFileDependencyGroups": {

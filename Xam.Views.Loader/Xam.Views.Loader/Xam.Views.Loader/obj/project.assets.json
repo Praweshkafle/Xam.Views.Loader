@@ -63,6 +63,19 @@
           "buildTransitive/Xamarin.Forms.props": {},
           "buildTransitive/Xamarin.Forms.targets": {}
         }
+      },
+      "Xam.Views.Loader.Portable/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "bin/placeholder/Xam.Views.Loader.Portable.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Xam.Views.Loader.Portable.dll": {}
+        }
       }
     }
   },
@@ -524,11 +537,17 @@
         "xamarin.forms.5.0.0.2012.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
+    },
+    "Xam.Views.Loader.Portable/1.0.0": {
+      "type": "project",
+      "path": "../../Xam.Views.Loader.Portable/Xam.Views.Loader.Portable.csproj",
+      "msbuildProject": "../../Xam.Views.Loader.Portable/Xam.Views.Loader.Portable.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
+      "Xam.Views.Loader.Portable >= 1.0.0",
       "Xamarin.Essentials >= 1.6.1",
       "Xamarin.Forms >= 5.0.0.2012"
     ]
@@ -564,7 +583,11 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Portable\\Xam.Views.Loader.Portable.csproj": {
+              "projectPath": "E:\\all projects\\My github\\Xam.Views.Loader\\Xam.Views.Loader\\Xam.Views.Loader.Portable\\Xam.Views.Loader.Portable.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

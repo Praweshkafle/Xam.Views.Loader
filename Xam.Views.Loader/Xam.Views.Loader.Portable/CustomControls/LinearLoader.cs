@@ -40,11 +40,9 @@ namespace Xam.Views.Loader.Portable.CustomControls
             this.HeightRequest = 5;
             this.VerticalOptions = LayoutOptions.Center;
             this.HorizontalOptions = LayoutOptions.FillAndExpand;
-            this.AnchorX = 1;
-            this.AnchorY = 0;
+           
             this.IsVisible = false;
             GetColor(SelectColor,SelectSecondaryColor);
-
         }
 
         public Color DefaultColor
@@ -87,19 +85,20 @@ namespace Xam.Views.Loader.Portable.CustomControls
         }
         private static async void DirectionChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var linearLoader = ((LinearLoader)bindable);
+            var linearLoader = (LinearLoader)bindable;
             await linearLoader.RunAnimation();
         }
         private static void ColorChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var linear = ((LinearLoader)bindable);
             linear.GetColor(newValue,linear.SelectSecondaryColor);
+            linear.ColorForSpreadFromCenter(newValue, linear.SelectSecondaryColor);
         }
-
         private static void SecondaryColorChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var linear = ((LinearLoader)bindable);
             linear.GetColor(linear.SelectColor,newValue);
+            linear.ColorForSpreadFromCenter(linear.SelectColor, newValue);
         }
         private static async void IsLoadingChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -153,42 +152,78 @@ namespace Xam.Views.Loader.Portable.CustomControls
             brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
             this.Background = brush;
         }
-
+        void ColorForSpreadFromCenter(object primary, object secondary)
+        {
+            var primaryColor = (Color)primary;
+            var secondaryColor = (Color)secondary;
+            var brush = new LinearGradientBrush();
+            brush.GradientStops.Add(new GradientStop() { Color = primaryColor, Offset = 0.4F });
+            brush.GradientStops.Add(new GradientStop() { Color = primaryColor, Offset = 0.4F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = primaryColor, Offset = 0.4F });
+            brush.GradientStops.Add(new GradientStop() { Color = primaryColor, Offset = 0.4F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = primaryColor, Offset = 0.4F });
+            brush.GradientStops.Add(new GradientStop() { Color = primaryColor, Offset = 0.4F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = primaryColor, Offset = 0.4F });
+            brush.GradientStops.Add(new GradientStop() { Color = primaryColor, Offset = 0.4F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = secondaryColor, Offset = 0.3F });
+            brush.GradientStops.Add(new GradientStop() { Color = primaryColor, Offset = 0.4F });
+            brush.GradientStops.Add(new GradientStop() { Color = primaryColor, Offset = 0.4F });
+            this.Background = brush;
+        }
         private async Task RunAnimation()
         {
             this.IsVisible = IsLoading;
             this.Scale = 5;
             Action<double> forward = a => this.AnchorX = a;
             Action<double> backward = a => this.AnchorY = a;
+            Action<double> center = a => this.ScaleX = a;
 
             int start = 0;
             int end = 0;
 
             if (Direction == FlowLoadingDirection.right)
             {
+                this.AnchorX = 1;
+                this.AnchorY = 0;
                 start = 1;
                 end = 0;
             }
             else if (Direction == FlowLoadingDirection.left)
             {
+                this.AnchorX = 1;
+                this.AnchorY = 0;
                 start = 0;
                 end = 1;
             }
             else if(Direction == FlowLoadingDirection.spreadFromCentre)
             {
-                //while (IsLoading)
-                //{
-                //    this.Animate(name: "forward", callback: forward, start: 0, end: 0.5, length: (uint)LoadingTime, easing: Easing.SinIn);
-                //   // this.Animate(name: "backward", callback: backward, start: 0.5, end: 0, length: (uint)LoadingTime, easing: Easing.SinIn);
-                //    //this.Animate(name: "Backward", callback: backward, start: 1, end: 0, length: 3000, easing: Easing.SinOut);
-                //    await Task.Delay((int)LoadingTime);
-                //}
+                this.ScaleX = 0.5;
+                ColorForSpreadFromCenter(SelectColor,SelectSecondaryColor);
+                while (IsLoading)
+                {
+                    this.Animate(name: "spreadformcenter", callback: center, start: 1, end: 0.3, length: (uint)Duration, easing: Easing.SinIn);
+                    await Task.Delay((int)Duration);
+
+                    this.Animate(name: "spreadformcenter1", callback: center, start: 0.3, end: 1, length: (uint)Duration, easing: Easing.SinInOut);
+                    await Task.Delay((int)Duration);
+                }
             }
             while (IsLoading)
             {
                 this.Animate(name: "forward", callback: forward, start: start, end: end, length: (uint)Duration, easing: Easing.SinIn);
                 await Task.Delay((int)Duration);
-                this.Animate(name: "forward", callback: forward, start: start, end: end, length: (uint)Duration, easing: Easing.SinIn);
+                this.Animate(name: "forward2", callback: forward, start: start, end: end, length: (uint)Duration, easing: Easing.SinIn);
 
                 //this.Animate(name: "Backward", callback: backward, start: 1, end: 0, length: 3000, easing: Easing.SinOut);
                 await Task.Delay((int)Duration);

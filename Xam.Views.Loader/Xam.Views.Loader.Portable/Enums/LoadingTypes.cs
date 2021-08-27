@@ -7,6 +7,7 @@ namespace Xam.Views.Loader.Portable.Enums
     public enum LoadingTypes
     {
         circle,
-        flip
+        flip,
+        verticle
     }
 }

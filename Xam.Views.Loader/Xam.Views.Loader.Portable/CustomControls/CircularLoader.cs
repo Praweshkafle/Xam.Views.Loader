@@ -85,6 +85,15 @@ namespace Xam.Views.Loader.Portable.CustomControls
                     await this.RotateYTo(0, (uint)Speed, Easing.SinIn);
                 }
             }
+            else if (LoadingType == LoadingTypes.verticle)
+            {
+                while (IsLoading)
+                {
+                    await this.RotateXTo(-90, (uint)Speed, Easing.SinIn);
+                    this.RotationX = 90;
+                    await this.RotateXTo(0, (uint)Speed, Easing.SinIn);
+                }
+            }
         }
 
         void StopAnimation()

@@ -44,11 +44,9 @@ namespace Xam.Views.Loader.Portable.CustomControls
 
         }
 
-        public Animation rotation;
-
         public CircularLoader()
         {
-           
+           //
         }
 
         private async Task AnimatingView()
@@ -65,9 +63,16 @@ namespace Xam.Views.Loader.Portable.CustomControls
             }
             else if (LoadingType == LoadingTypes.flip)
             {
-
+                while (IsLoading)
+                {
+                    // this.Animate(name: "circle", callback: degree, start: 0, end: 360, length: 1000, easing: Easing.Linear);
+                    await this.RotateYTo(-90, 300, Easing.SinIn);
+                    this.RotationY = 90;
+                    await this.RotateYTo(0, 300, Easing.SinIn);
+                }
             }
         }
+
         void StopAnimation()
         {
             this.CancelAnimations();

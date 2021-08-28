@@ -15,7 +15,7 @@ namespace Xam.Views.Loader.Portable.CustomControls
             BindableProperty.Create(nameof(LoadingType), typeof(LoadingTypes),
                 typeof(LinearLoader), defaultValue: LoadingTypes.circle, propertyChanged: DirectionChanged);
 
-        public static readonly BindableProperty LoadingSpeedProperty =
+        public static readonly BindableProperty SpeedProperty =
                    BindableProperty.Create(nameof(LoadingType), typeof(LoadingSpeed),
                        typeof(LinearLoader), defaultValue: LoadingSpeed.fast, propertyChanged: SpeedChanged);
 
@@ -30,8 +30,8 @@ namespace Xam.Views.Loader.Portable.CustomControls
         }
         public LoadingSpeed Speed
         {
-            get => (LoadingSpeed)GetValue(LoadingSpeedProperty);
-            set => SetValue(LoadingSpeedProperty, value);
+            get => (LoadingSpeed)GetValue(SpeedProperty);
+            set => SetValue(SpeedProperty, value);
         }
         public bool IsLoading
         {

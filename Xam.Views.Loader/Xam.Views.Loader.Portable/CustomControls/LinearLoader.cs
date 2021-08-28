@@ -31,8 +31,8 @@ namespace Xam.Views.Loader.Portable.CustomControls
         public static readonly BindableProperty IsLoadingProperty =
             BindableProperty.Create(nameof(IsLoading), typeof(bool), typeof(LinearLoader), defaultValue: false, propertyChanged: IsLoadingChanged);
 
-        public static readonly BindableProperty DurationProperty =
-                    BindableProperty.Create(nameof(Duration), typeof(SpeedDuration), typeof(LinearLoader), defaultValue: SpeedDuration.fast);
+        public static readonly BindableProperty SpeedProperty =
+                    BindableProperty.Create(nameof(Speed), typeof(SpeedDuration), typeof(LinearLoader), defaultValue: SpeedDuration.fast);
 
 
         public LinearLoader()
@@ -61,10 +61,10 @@ namespace Xam.Views.Loader.Portable.CustomControls
             set => SetValue(SelectAnotherColorProperty, value);
         }
 
-        public SpeedDuration Duration
+        public SpeedDuration Speed
         {
-            get => (SpeedDuration)GetValue(DurationProperty);
-            set => SetValue(DurationProperty, value);
+            get => (SpeedDuration)GetValue(SpeedProperty);
+            set => SetValue(SpeedProperty, value);
         }
         public FlowLoadingDirection Direction
         {
@@ -212,21 +212,21 @@ namespace Xam.Views.Loader.Portable.CustomControls
                 ColorForSpreadFromCenter(SelectColor,SelectSecondaryColor);
                 while (IsLoading)
                 {
-                    this.Animate(name: "spreadformcenter", callback: center, start: 1, end: 0.3, length: (uint)Duration, easing: Easing.SinIn);
-                    await Task.Delay((int)Duration);
+                    this.Animate(name: "spreadformcenter", callback: center, start: 1, end: 0.3, length: (uint)Speed, easing: Easing.SinIn);
+                    await Task.Delay((int)Speed);
 
-                    this.Animate(name: "spreadformcenter1", callback: center, start: 0.3, end: 1, length: (uint)Duration, easing: Easing.SinInOut);
-                    await Task.Delay((int)Duration);
+                    this.Animate(name: "spreadformcenter1", callback: center, start: 0.3, end: 1, length: (uint)Speed, easing: Easing.SinInOut);
+                    await Task.Delay((int)Speed);
                 }
             }
             while (IsLoading)
             {
-                this.Animate(name: "forward", callback: forward, start: start, end: end, length: (uint)Duration, easing: Easing.SinIn);
-                await Task.Delay((int)Duration);
-                this.Animate(name: "forward2", callback: forward, start: start, end: end, length: (uint)Duration, easing: Easing.SinIn);
+                this.Animate(name: "forward", callback: forward, start: start, end: end, length: (uint)Speed, easing: Easing.SinIn);
+                await Task.Delay((int)Speed);
+                this.Animate(name: "forward2", callback: forward, start: start, end: end, length: (uint)Speed, easing: Easing.SinIn);
 
                 //this.Animate(name: "Backward", callback: backward, start: 1, end: 0, length: 3000, easing: Easing.SinOut);
-                await Task.Delay((int)Duration);
+                await Task.Delay((int)Speed);
             }
 
         }

@@ -2,15 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xam.Views.Loader.MainPage"
-             xmlns:CustomLoaders="clr-namespace:Xam.Views.Loader.Portable.CustomControls;assembly=Xam.Views.Loader.Portable">
+             xmlns:CustomLoaders="clr-namespace:Xam.Views.Loader.Portable.CustomControls;assembly=Xam.Views.Loader.Portable"
+             xmlns:Enums="clr-namespace:Xam.Views.Loader.Portable.Enums;assembly=Xam.Views.Loader.Portable">
 
     <!--<StackLayout>
         <loaders:
     </StackLayout>-->
     <StackLayout>
-        <Switch x:Name="LoaderToggler"></Switch>
-        <CustomLoaders:LinearLoader IsLoading="{Binding IsToggled}" BindingContext="{x:Reference LoaderToggler}" Margin="0,10"/> 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Label Grid.Row="0" Grid.Column="0">Run Loaders</Label>
+        <Switch x:Name="LoaderToggler" Grid.Row="0" Grid.Column="1"/>
+        
+        <Label Grid.Row="0" Grid.Column="0">Speed</Label>
+        <CustomLoaders:EnumBindablePicker x:TypeArguments="Enums:SpeedDuration" SelectedItem="{Binding SelectedSpeed}"></CustomLoaders:EnumBindablePicker>
+
+        <CustomLoaders:LinearLoader  Direction="right" IsLoading="{Binding IsToggled}" BindingContext="{x:Reference LoaderToggler}" Margin="0,10"  Speed="{Binding SelectedSpeed}"/>
+
+        <CustomLoaders:CircularLoader LoadingType="circle" IsLoading="{Binding IsToggled}" BindingContext="{x:Reference LoaderToggler}" Margin="40"  Speed="{Binding SelectedSpeed}">
+            <Grid HeightRequest="40" WidthRequest="40" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Black"/>
+        </CustomLoaders:CircularLoader>
+
+        <CustomLoaders:CircularLoader LoadingType="flip" IsLoading="{Binding IsToggled}" BindingContext="{x:Reference LoaderToggler}" Margin="40"  Speed="{Binding SelectedSpeed}">
+            <Grid HeightRequest="40" WidthRequest="40" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Black"/>
+        </CustomLoaders:CircularLoader>
+
+        <CustomLoaders:CircularLoader LoadingType="verticle" IsLoading="{Binding IsToggled}" BindingContext="{x:Reference LoaderToggler}" Margin="40"  Speed="{Binding SelectedSpeed}">
+            <Grid HeightRequest="40" WidthRequest="40" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Black"/>
+        </CustomLoaders:CircularLoader>
     </StackLayout>
+
+   
     <!--<BoxView x:Name="boxBackground" Scale="5" AnchorX="1" AnchorY="0"
                  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HeightRequest="2" WidthRequest="400">
         <BoxView.Background>

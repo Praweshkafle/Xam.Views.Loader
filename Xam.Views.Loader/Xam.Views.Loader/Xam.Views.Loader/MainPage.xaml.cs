@@ -4,16 +4,42 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xam.Views.Loader.Portable.Enums;
 using Xamarin.Forms;
 
 namespace Xam.Views.Loader
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : ContentPage, INotifyPropertyChanged
     {
         public MainPage()
         {
             InitializeComponent();
-           // Task.Run(AnimationColor);
+            // Task.Run(AnimationColor);
+        }
+
+        public List<string> BreeSdNames
+        {
+            get
+            {
+                return new List<string> { "Border Collie", "Labrador Retriever", "Pit Bull" };
+            }
+        }
+
+        private SpeedDuration _spped;
+        public SpeedDuration SelectedSpeed
+        {
+            get => _spped;
+            set
+            {
+                _spped = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         //private async Task AnimationColor()

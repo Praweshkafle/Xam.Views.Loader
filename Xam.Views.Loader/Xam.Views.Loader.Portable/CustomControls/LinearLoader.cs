@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Threading.Tasks;
 using Xam.Views.Loader.Portable.Enums;
 using Xamarin.Forms;
@@ -23,8 +21,8 @@ namespace Xam.Views.Loader.Portable.CustomControls
       
 
         public static readonly BindableProperty LoadingDirectionProperty =
-            BindableProperty.Create(nameof(Direction), typeof(FlowLoadingDirection),
-                typeof(LinearLoader), defaultValue: FlowLoadingDirection.right, propertyChanged: DirectionChanged);
+            BindableProperty.Create(nameof(LoadingDirection), typeof(LinearLoadingDirection),
+                typeof(LinearLoader), defaultValue: LinearLoadingDirection.Right, propertyChanged: DirectionChanged);
 
 
 
@@ -32,7 +30,7 @@ namespace Xam.Views.Loader.Portable.CustomControls
             BindableProperty.Create(nameof(IsLoading), typeof(bool), typeof(LinearLoader), defaultValue: false, propertyChanged: IsLoadingChanged);
 
         public static readonly BindableProperty SpeedProperty =
-                    BindableProperty.Create(nameof(Speed), typeof(SpeedDuration), typeof(LinearLoader), defaultValue: SpeedDuration.fast);
+                    BindableProperty.Create(nameof(Speed), typeof(SpeedDuration), typeof(LinearLoader), defaultValue: SpeedDuration.Fast);
 
 
         public LinearLoader()
@@ -66,9 +64,9 @@ namespace Xam.Views.Loader.Portable.CustomControls
             get => (SpeedDuration)GetValue(SpeedProperty);
             set => SetValue(SpeedProperty, value);
         }
-        public FlowLoadingDirection Direction
+        public LinearLoadingDirection LoadingDirection
         {
-            get => (FlowLoadingDirection)GetValue(LoadingDirectionProperty);
+            get => (LinearLoadingDirection)GetValue(LoadingDirectionProperty);
             set => SetValue(LoadingDirectionProperty, value);
         }
 
@@ -192,21 +190,21 @@ namespace Xam.Views.Loader.Portable.CustomControls
             int start = 0;
             int end = 0;
 
-            if (Direction == FlowLoadingDirection.right)
+            if (LoadingDirection == LinearLoadingDirection.Right)
             {
                 this.AnchorX = 1;
                 this.AnchorY = 0;
                 start = 1;
                 end = 0;
             }
-            else if (Direction == FlowLoadingDirection.left)
+            else if (LoadingDirection == LinearLoadingDirection.Left)
             {
                 this.AnchorX = 1;
                 this.AnchorY = 0;
                 start = 0;
                 end = 1;
             }
-            else if(Direction == FlowLoadingDirection.spreadFromCentre)
+            else if(LoadingDirection == LinearLoadingDirection.SpreadFromCentre)
             {
                 this.ScaleX = 0.5;
                 ColorForSpreadFromCenter(SelectColor,SelectSecondaryColor);

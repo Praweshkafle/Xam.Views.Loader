@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Threading.Tasks;
 using Xam.Views.Loader.Portable.Enums;
 using Xamarin.Forms;
@@ -12,10 +10,10 @@ namespace Xam.Views.Loader.Portable.CustomControls
     {
 
         public static readonly BindableProperty LoadingTypeProperty =
-            BindableProperty.Create(nameof(LoadingType), typeof(LoadingTypes),
-                typeof(LinearLoader), defaultValue: LoadingTypes.circle, propertyChanged: DirectionChanged);
+            BindableProperty.Create(nameof(LoadingType), typeof(LoadingType),
+                typeof(LinearLoader), defaultValue: LoadingType.Circular, propertyChanged: DirectionChanged);
 
-        public static readonly BindableProperty LoadingSpeedProperty =
+        public static readonly BindableProperty SpeedProperty =
                    BindableProperty.Create(nameof(LoadingType), typeof(LoadingSpeed),
                        typeof(LinearLoader), defaultValue: LoadingSpeed.fast, propertyChanged: SpeedChanged);
 
@@ -23,15 +21,15 @@ namespace Xam.Views.Loader.Portable.CustomControls
            BindableProperty.Create(nameof(IsLoading), typeof(bool), typeof(LinearLoader), 
                defaultValue: false, propertyChanged: IsLoadingChanged);
 
-        public LoadingTypes LoadingType
+        public LoadingType LoadingType
         {
-            get => (LoadingTypes)GetValue(LoadingTypeProperty);
+            get => (LoadingType)GetValue(LoadingTypeProperty);
             set => SetValue(LoadingTypeProperty, value);
         }
         public LoadingSpeed Speed
         {
-            get => (LoadingSpeed)GetValue(LoadingSpeedProperty);
-            set => SetValue(LoadingSpeedProperty, value);
+            get => (LoadingSpeed)GetValue(SpeedProperty);
+            set => SetValue(SpeedProperty, value);
         }
         public bool IsLoading
         {
@@ -44,7 +42,6 @@ namespace Xam.Views.Loader.Portable.CustomControls
         }
         private static async void DirectionChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            //
             await ((CircularLoader)bindable).AnimatingView();
         }
         private static async void IsLoadingChanged(BindableObject bindable, object oldValue, object newValue)
@@ -58,15 +55,10 @@ namespace Xam.Views.Loader.Portable.CustomControls
 
         }
 
-        public CircularLoader()
-        {
-           //
-        }
-
         private async Task AnimatingView()
         {
             Action<double> degree = a => this.Rotation = a;
-            if (LoadingType==LoadingTypes.circle)
+            if (LoadingType==LoadingType.Circular)
             {
                 while (IsLoading)
                 {
@@ -75,7 +67,7 @@ namespace Xam.Views.Loader.Portable.CustomControls
                     //rotation.Commit(this, "circleRotate", 16, 1000, Easing.SinIn, (a, b) => { this.RotationX = 0; }, () => true);
                 }
             }
-            else if (LoadingType == LoadingTypes.flip)
+            else if (LoadingType == LoadingType.FlipInXAxis)
             {
                 while (IsLoading)
                 {
@@ -85,7 +77,7 @@ namespace Xam.Views.Loader.Portable.CustomControls
                     await this.RotateYTo(0, (uint)Speed, Easing.SinIn);
                 }
             }
-            else if (LoadingType == LoadingTypes.verticle)
+            else if (LoadingType == LoadingType.FlipInYAxis)
             {
                 while (IsLoading)
                 {
